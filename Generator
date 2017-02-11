@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to generate a random exhibition.</p>
+
+<button onclick="myFunction1()">Generate random exhibition Idea</button>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+
+var ideas  = ['toilets', 'bathrooms','swords','mouses','corpses','animals', ];
+var places  = ['a airport', 'a bathroom', 'Narnia', 'Three Dogs studio', ];
+var peoples  = ['policemen', 'janitors','designers','chefs','cats', ];
+var orginizes = ['three dogs', 'maritime museum',];
+var ideasInput  = document.getElementById("ideas");
+var placesInput  = document.getElementById("places");
+function insert ( ) {
+ ideas.push( ideasInput.value );
+ places.push( placesInput.value );
+ peoples.push( peoplesInput.value );
+ clearAndShow();
+}
+function clearAndShow () {
+  // Clear our fields
+  ideasInput.value = " ";
+  placesInput.value = " ";
+  peoplesInput.value = " ";
+
+  // Show our output
+  
+  document.getElementById("demo1").innerHTML += ("Exhibition ideas: " + ideas.join(", "));
+  document.getElementById("demo1").innerHTML += ("Exhibition places: " + places.join(", "));
+  document.getElementById("demo1").innerHTML += ("Exhibition audience: " + peoples.join(", "));
+}
+
+
+function myFunction1(){
+var idea = ideas[Math.floor(Math.random()*ideas.length)];
+var place = places[Math.floor(Math.random()*places.length)];
+var people = peoples[Math.floor(Math.random()*peoples.length)];
+var orginize = orginizes[Math.floor(Math.random()*orginizes.length)];
+document.getElementById("demo").innerHTML = ('An exhibition about ' + idea + ' in ' + place + ' orginized by ' + orginize + ' for ' + people);
+}
+</script>
+
+</body>
+</html>
